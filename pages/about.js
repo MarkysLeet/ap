@@ -1,4 +1,3 @@
-import Link from 'next/link';
 import Layout from '../components/Layout';
 import FloatingShapes from '../components/FloatingShapes';
 import SectionWrapper from '../components/SectionWrapper';
@@ -15,25 +14,44 @@ const AboutPage = () => {
             Avenue Professional — бренд профессиональной косметики для маникюра, сочетающий качество,
             стиль и заботу о мастерах.
           </p>
+          <div className={styles['av-about-heroSocial']}>
+            <a
+              href="https://www.instagram.com/avenue_professional_official"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles['av-about-heroSocialLink']}
+              aria-label="Мы в Instagram"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="26"
+                height="26"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1.8"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                aria-hidden="true"
+              >
+                <rect x="3" y="3" width="18" height="18" rx="4" ry="4" />
+                <path d="M16 11.37A4 4 0 1 1 12.63 8" />
+                <circle cx="17.5" cy="6.5" r="0.8" />
+              </svg>
+            </a>
+          </div>
         </SectionWrapper>
         <SectionWrapper className={styles['av-about-infoGrid']}>
           <div className={styles['av-about-card']}>
-            <h3>Çalışma Saatlerimiz</h3>
-            <p>Pazartesi–Cuma : 10:00–19:00</p>
-            <p>Cumartesi : 10:00–19:00</p>
+            <h3>Наши часы работы</h3>
+            <p>Понедельник–Пятница: 10:00–19:00</p>
+            <p>Суббота: 10:00–19:00</p>
+            <p>Воскресенье: выходной</p>
           </div>
           <div className={styles['av-about-card']}>
-            <h3>Adresimiz</h3>
-            <p>Fener Mahallede, Bülent Ecevit Blv 2B, Laura AVM. Giriş kat. Muratpaşa / Antalya</p>
+            <h3>Наш адрес</h3>
+            <p>Fener Mahallesi, Bülent Ecevit Blv 2B, Laura AVM, Antalya</p>
             <p>+90 531 270 5539</p>
-            <Link
-              href="https://www.instagram.com/avenue_professional_official"
-              target="_blank"
-              rel="noreferrer"
-              className={styles['av-about-link']}
-            >
-              Instagram
-            </Link>
           </div>
         </SectionWrapper>
         <SectionWrapper className={styles['av-about-contact']}>

@@ -233,6 +233,18 @@ html {
   align-items: start;
 }
 
+@media (min-width: 640px) {
+  .av-slide {
+    gap: 20px;
+  }
+}
+
+@media (min-width: 768px) {
+  .av-slide {
+    gap: 24px;
+  }
+}
+
 @media (min-width: 1024px) {
   .av-slide {
     grid-template-columns: repeat(4, 1fr);
