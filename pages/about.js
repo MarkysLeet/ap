@@ -5,6 +5,15 @@ import styles from '../styles/AboutPage.module.css';
 
 const FloatingOrbs = dynamic(() => import('../components/FloatingOrbs'), { ssr: false });
 
+const InstagramIcon = (props) => (
+  <svg viewBox="0 0 24 24" aria-hidden="true" {...props}>
+    <path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5z" fill="currentColor" opacity="0.12" />
+    <rect x="5" y="5" width="14" height="14" rx="4" ry="4" stroke="currentColor" fill="none" />
+    <circle cx="12" cy="12" r="3.2" stroke="currentColor" fill="none" />
+    <circle cx="16.5" cy="7.5" r="1.2" fill="currentColor" />
+  </svg>
+);
+
 const AboutPage = () => {
   return (
     <Layout title="О нас — Avenue Professional">
@@ -24,22 +33,7 @@ const AboutPage = () => {
               className={styles['av-about-heroSocialLink']}
               aria-label="Мы в Instagram"
             >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="26"
-                height="26"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="1.8"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                aria-hidden="true"
-              >
-                <rect x="3" y="3" width="18" height="18" rx="4" ry="4" />
-                <path d="M16 11.37A4 4 0 1 1 12.63 8" />
-                <circle cx="17.5" cy="6.5" r="0.8" />
-              </svg>
+              <InstagramIcon className="w-6 h-6" />
             </a>
           </div>
         </SectionWrapper>

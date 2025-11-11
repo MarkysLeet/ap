@@ -1,3 +1,5 @@
+'use client';
+
 import { createContext, useContext, useEffect, useMemo, useReducer } from 'react';
 
 const STORAGE_KEY = 'avenue-cart';

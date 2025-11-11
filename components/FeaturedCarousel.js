@@ -1,3 +1,5 @@
+'use client';
+
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import ProductCard from './ProductCard';
 import SectionWrapper from './SectionWrapper';

@@ -12,6 +12,10 @@ const Layout = ({ children, title = 'Avenue Beauty — косметика и у�
           name="description"
           content="Avenue Beauty — уютный интернет-магазин косметики и аксессуаров для маникюра."
         />
+        <link
+          rel="icon"
+          href={'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><text y="14" font-size="14">🌸</text></svg>'}
+        />
       </Head>
       <Header />
       <main className={styles.main}>
