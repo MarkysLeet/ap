@@ -123,8 +123,9 @@
 }
 
 .av-about-contact {
-  max-width: 720px;
-  margin: 0 auto;
+  max-width: 768px;
+  margin-inline: auto;
+  margin-block: 0;
   padding: 48px 40px;
   background: rgba(255, 255, 255, 0.92);
   border-radius: 26px;
