@@ -84,6 +84,7 @@
 }
 
 .av-about-card {
+  position: relative;
   background: #ffffff;
   border-radius: 24px;
   padding: 32px 28px;
@@ -92,6 +93,38 @@
   display: flex;
   flex-direction: column;
   gap: 10px;
+}
+
+.av-about-cardAction {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--color-surface);
+  border: 1px solid rgba(231, 223, 228, 0.8);
+  box-shadow: 0 14px 32px rgba(26, 26, 26, 0.08);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-text);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+  z-index: 1;
+}
+
+.av-about-cardAction:hover,
+.av-about-cardAction:focus-visible {
+  transform: translateY(-2px);
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+  box-shadow: 0 18px 36px rgba(226, 0, 122, 0.16);
+  outline: none;
+}
+
+.av-about-cardAction svg {
+  width: 18px;
+  height: 18px;
 }
 
 .av-about-card h3 {
