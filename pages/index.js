@@ -1,12 +1,14 @@
 import Link from 'next/link';
+import dynamic from 'next/dynamic';
 import Layout from '../components/Layout';
 import Hero from '../components/Hero';
 import CategoryGrid from '../components/CategoryGrid';
 import FeaturedCarousel from '../components/FeaturedCarousel';
-import FloatingShapes from '../components/FloatingShapes';
 import SectionWrapper from '../components/SectionWrapper';
 import { categories, products } from '../data/products';
 import styles from '../styles/Home.module.css';
+
+const FloatingOrbs = dynamic(() => import('../components/FloatingOrbs'), { ssr: false });
 
 const features = [
   {
@@ -30,7 +32,7 @@ const Home = () => {
     <Layout>
       <Hero />
       <SectionWrapper as="section" className={styles.section} id="catalog">
-        <FloatingShapes />
+        <FloatingOrbs />
         <div style={{ position: 'relative', zIndex: 1 }}>
           <div className={styles.sectionHeader}>
             <h2>Категории</h2>

@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import FloatingShapes from './FloatingShapes';
+import dynamic from 'next/dynamic';
 import SectionWrapper from './SectionWrapper';
 import styles from '../styles/Hero.module.css';
 
@@ -15,10 +15,12 @@ const handleAnchorClick = (event) => {
   }
 };
 
+const FloatingOrbs = dynamic(() => import('./FloatingOrbs'), { ssr: false });
+
 const Hero = () => {
   return (
     <SectionWrapper className={styles['av-hero-section']}>
-      <FloatingShapes />
+      <FloatingOrbs />
       <div className={styles['av-hero-shell']}>
         <div className={styles.hero}>
           <div className={styles.content}>

@@ -1,13 +1,15 @@
+import dynamic from 'next/dynamic';
 import Layout from '../components/Layout';
-import FloatingShapes from '../components/FloatingShapes';
 import SectionWrapper from '../components/SectionWrapper';
 import styles from '../styles/AboutPage.module.css';
+
+const FloatingOrbs = dynamic(() => import('../components/FloatingOrbs'), { ssr: false });
 
 const AboutPage = () => {
   return (
     <Layout title="О нас — Avenue Professional">
       <main className={styles['av-about-page']}>
-        <FloatingShapes />
+        <FloatingOrbs />
         <SectionWrapper className={styles['av-about-hero']}>
           <h1 className="av-hero-title">О нас</h1>
           <p>
