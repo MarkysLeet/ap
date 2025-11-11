@@ -1,3 +1,5 @@
+'use client';
+
 import Image from 'next/image';
 import Link from 'next/link';
 import dynamic from 'next/dynamic';
@@ -8,6 +10,9 @@ const handleAnchorClick = (event) => {
   const href = (event.currentTarget.getAttribute('href') || '').trim();
   if (href && href.startsWith('#')) {
     event.preventDefault();
+    if (typeof document === 'undefined') {
+      return;
+    }
     const target = document.querySelector(href);
     if (target) {
       target.scrollIntoView({ behavior: 'smooth', block: 'start' });
