@@ -148,7 +148,7 @@ const FeaturedCarousel = ({ products = [] }) => {
 
   return (
     <SectionWrapper
-      className={`${styles.carousel} av-carousel`}
+      className={`${styles.carousel} ${styles['av-carousel']}`}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
       onTouchStart={handleTouchStart}
@@ -162,11 +162,14 @@ const FeaturedCarousel = ({ products = [] }) => {
       <div className={styles.viewport}>
         <div
           className={styles.slider}
-          style={{ transform: `translateX(-${activeIndex * 100}%)` }}
+          style={{
+            transform: `translateX(-${activeIndex * 100}%)`,
+            transition: 'transform 0.45s ease',
+          }}
         >
           {slides.map((group, index) => (
             <div key={`slide-${index}`} className={styles.slide}>
-              <div className={`${styles.slideInner} av-slide`}>
+              <div className={styles.slideInner}>
                 {group.map((product) => (
                   <ProductCard key={product.id} product={product} className="av-card--carousel" />
                 ))}

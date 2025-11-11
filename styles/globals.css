@@ -267,6 +267,7 @@ html {
 
 .av-card--carousel {
   height: auto;
+  margin: 0;
 }
 
 .av-card-media {

@@ -2,18 +2,21 @@
   position: relative;
   overflow: visible;
   isolation: isolate;
-  --carousel-gap: 16px;
 }
 
-@media (min-width: 640px) {
-  .carousel {
-    --carousel-gap: 20px;
+.av-carousel {
+  --av-gap: 24px;
+}
+
+@media (max-width: 1024px) {
+  .av-carousel {
+    --av-gap: 20px;
   }
 }
 
-@media (min-width: 768px) {
-  .carousel {
-    --carousel-gap: 24px;
+@media (max-width: 640px) {
+  .av-carousel {
+    --av-gap: 16px;
   }
 }
 
@@ -24,29 +27,30 @@
 
 .slider {
   display: flex;
-  width: 100%;
-  transition: transform 0.45s ease;
   will-change: transform;
 }
 
 .slide {
-  flex: 0 0 100%;
-  padding: 8px 0 12px;
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
+  min-width: 100%;
+  padding-inline: var(--av-gap);
   box-sizing: border-box;
 }
 
 .slideInner {
-  width: 100%;
-  max-width: 1480px;
-  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--av-gap);
+}
+
+@media (max-width: 1024px) {
+  .slideInner {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 }
 
 @media (max-width: 640px) {
   .slideInner {
-    max-width: none;
+    grid-template-columns: 1fr;
   }
 }
 
