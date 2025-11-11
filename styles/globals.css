@@ -228,26 +228,39 @@ html {
 }
 
 .av-slide {
+  --av-slide-gap: 16px;
   display: grid;
-  gap: 16px;
-  align-items: start;
+  gap: var(--av-slide-gap);
+  align-items: stretch;
+  box-sizing: border-box;
 }
 
-@media (min-width: 1024px) {
+.av-slide > * {
+  min-width: 0;
+}
+
+@media (min-width: 640px) {
   .av-slide {
-    grid-template-columns: repeat(4, 1fr);
+    --av-slide-gap: 20px;
   }
 }
 
-@media (min-width: 640px) and (max-width: 1023.98px) {
+@media (min-width: 768px) {
   .av-slide {
-    grid-template-columns: repeat(2, 1fr);
+    --av-slide-gap: 24px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
-@media (max-width: 639.98px) {
+@media (max-width: 767.98px) {
   .av-slide {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1280px) {
+  .av-slide {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 }
 
@@ -274,7 +287,7 @@ html {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  z-index: 60;
+  z-index: 20;
 }
 
 .av-cr-prev {
@@ -381,8 +394,10 @@ html {
   position: absolute;
   inset: 0;
   pointer-events: none;
-  z-index: 0;
+  user-select: none;
+  z-index: -10;
   overflow: hidden;
+  isolation: isolate;
 }
 
 .av-float-dot {
@@ -390,35 +405,21 @@ html {
   width: 140px;
   height: 140px;
   border-radius: 9999px;
-  background: radial-gradient(closest-side, rgba(255, 0, 128, 0.18), rgba(255, 0, 128, 0));
-  filter: blur(2px);
-  animation: av-float 12s ease-in-out infinite;
+  background: radial-gradient(closest-side, rgba(255, 0, 128, 0.35), rgba(255, 0, 128, 0));
+  opacity: 0.35;
+  filter: blur(8px);
 }
 
 .av-float-dot--sm {
   width: 90px;
   height: 90px;
-  opacity: 0.7;
-  animation-duration: 14s;
+  opacity: 0.3;
 }
 
 .av-float-dot--lg {
   width: 200px;
   height: 200px;
-  opacity: 0.25;
-  animation-duration: 16s;
-}
-
-@keyframes av-float {
-  0% {
-    transform: translateY(0) translateX(0);
-  }
-  50% {
-    transform: translateY(-18px) translateX(10px);
-  }
-  100% {
-    transform: translateY(0) translateX(0);
-  }
+  opacity: 0.4;
 }
 
 /* --- Avenue: category card CTA anchored --- */

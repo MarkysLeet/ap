@@ -1,6 +1,7 @@
 .carousel {
   position: relative;
   overflow: visible;
+  isolation: isolate;
 }
 
 .viewport {
@@ -27,6 +28,7 @@
   width: 100%;
   max-width: 1480px;
   margin: 0 auto;
+  box-sizing: border-box;
 }
 
 @media (max-width: 640px) {
@@ -51,6 +53,7 @@
   box-shadow: 0 16px 24px rgba(26, 26, 26, 0.08);
   cursor: pointer;
   transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+  z-index: 20;
 }
 
 .navButton:hover {

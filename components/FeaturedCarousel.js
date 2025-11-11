@@ -7,7 +7,7 @@ const AUTO_DELAY = 5500;
 
 const getPerSlideByWidth = (width) => {
   if (width >= 1280) {
-    return 4;
+    return 3;
   }
   if (width >= 768) {
     return 2;
