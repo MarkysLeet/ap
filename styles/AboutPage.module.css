@@ -39,6 +39,40 @@
   line-height: 1.8;
 }
 
+.av-about-heroSocial {
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+}
+
+.av-about-heroSocialLink {
+  width: 58px;
+  height: 58px;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-primary);
+  background: rgba(255, 255, 255, 0.85);
+  border: 1px solid rgba(231, 223, 228, 0.75);
+  box-shadow: 0 20px 44px rgba(226, 0, 122, 0.16);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease, border-color 0.3s ease;
+}
+
+.av-about-heroSocialLink:hover,
+.av-about-heroSocialLink:focus-visible {
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 24px 52px rgba(226, 0, 122, 0.22);
+  background: rgba(255, 255, 255, 0.95);
+  border-color: rgba(226, 0, 122, 0.35);
+  outline: none;
+}
+
+.av-about-heroSocialLink svg {
+  width: 26px;
+  height: 26px;
+}
+
 .av-about-infoGrid {
   max-width: 1040px;
   margin: 0 auto;
@@ -89,7 +123,7 @@
 }
 
 .av-about-contact {
-  max-width: 720px;
+  max-width: 900px;
   margin: 0 auto;
   padding: 48px 40px;
   background: rgba(255, 255, 255, 0.92);
