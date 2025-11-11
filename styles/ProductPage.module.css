@@ -1,0 +1,138 @@
+.productSection {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 48px;
+  align-items: center;
+}
+
+.imageWrapper {
+  position: relative;
+  width: 100%;
+  height: 420px;
+  background: linear-gradient(135deg, rgba(226, 0, 122, 0.08), rgba(248, 221, 232, 0.4));
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-soft);
+  border: 1px solid rgba(231, 223, 228, 0.7);
+}
+
+.info h1 {
+  font-size: 2.4rem;
+  margin-bottom: 16px;
+}
+
+.description {
+  color: var(--color-muted);
+  line-height: 1.8;
+  margin-bottom: 24px;
+}
+
+.price {
+  font-size: 1.6rem;
+  font-weight: 600;
+  margin-bottom: 24px;
+}
+
+.av-product-rating {
+  margin-top: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.av-product-rating h3 {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.av-stars {
+  display: inline-flex;
+  gap: 10px;
+}
+
+.av-star {
+  width: 32px;
+  height: 32px;
+  border: none;
+  background: transparent;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.av-star svg {
+  width: 26px;
+  height: 26px;
+  fill: none;
+  stroke: #ff0080;
+  stroke-width: 1.6px;
+}
+
+.av-star-active svg,
+.av-star:hover svg,
+.av-star:focus-visible svg {
+  fill: #ff0080;
+}
+
+.av-star:hover,
+.av-star:focus-visible {
+  transform: scale(1.08);
+  outline: none;
+}
+
+.av-rating-note {
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--color-muted);
+}
+
+.addButton {
+  padding: 14px 28px;
+  border: none;
+  border-radius: 999px;
+  background-color: var(--color-primary);
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 22px 40px rgba(226, 0, 122, 0.18);
+  transition: var(--transition-base);
+}
+
+.addButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 24px 50px rgba(226, 0, 122, 0.24);
+}
+
+.empty {
+  padding: 80px 0;
+  text-align: center;
+  color: var(--color-muted);
+}
+
+.av-related {
+  margin-top: 72px;
+  display: grid;
+  gap: 28px;
+}
+
+.av-related h2 {
+  margin: 0;
+  font-size: clamp(1.8rem, 3vw, 2.2rem);
+}
+
+.av-related-hint {
+  text-align: center;
+  color: var(--color-muted);
+  font-size: 0.95rem;
+}
+
+@media (max-width: 768px) {
+  .imageWrapper {
+    height: 320px;
+  }
+
+  .av-related {
+    margin-top: 52px;
+    gap: 20px;
+  }
+}
