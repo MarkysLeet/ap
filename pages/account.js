@@ -984,12 +984,9 @@ const AccountPage = () => {
     </div>
   );
 
-  if (!isAuthenticated) {
-    return null;
-  }
-
   return (
     <Layout title="Личный кабинет — Avenue Professional">
+      {!isAuthenticated ? null : (
       <section className={styles['av-account-section']}>
         <header className={styles['av-account-header']}>
           <h1>Личный кабинет</h1>
@@ -1029,6 +1026,7 @@ const AccountPage = () => {
           {activeTab === 'security' && renderSecurity()}
         </div>
       </section>
+      )}
     </Layout>
   );
 };
