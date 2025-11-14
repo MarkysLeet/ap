@@ -5,54 +5,24 @@ import styles from '../styles/FeaturedCarousel.module.css';
 
 const AUTO_DELAY = 5500;
 
-const getPerSlideByWidth = (width) => {
-  if (width >= 1280) {
-    return 4;
-  }
-  if (width >= 768) {
-    return 2;
-  }
-  return 1;
-};
+const PAGE_SIZE = 3;
 
 const FeaturedCarousel = ({ products = [] }) => {
   const liveMessageRef = useRef(null);
   const hoverRef = useRef(false);
   const focusRef = useRef(false);
-  const [perSlide, setPerSlide] = useState(() => {
-    if (typeof window === 'undefined') {
-      return 1;
-    }
-    return getPerSlideByWidth(window.innerWidth);
-  });
   const [activeIndex, setActiveIndex] = useState(0);
   const [paused, setPaused] = useState(false);
-
-  useEffect(() => {
-    if (typeof window === 'undefined') {
-      return undefined;
-    }
-
-    const updatePerSlide = () => {
-      const next = getPerSlideByWidth(window.innerWidth);
-      setPerSlide(next);
-    };
-
-    updatePerSlide();
-    window.addEventListener('resize', updatePerSlide);
-    return () => window.removeEventListener('resize', updatePerSlide);
-  }, []);
 
   const validProducts = useMemo(() => products.filter(Boolean), [products]);
 
   const slides = useMemo(() => {
-    const groupSize = Math.max(perSlide, 1);
     const output = [];
-    for (let index = 0; index < validProducts.length; index += groupSize) {
-      output.push(validProducts.slice(index, index + groupSize));
+    for (let index = 0; index < validProducts.length; index += PAGE_SIZE) {
+      output.push(validProducts.slice(index, index + PAGE_SIZE));
     }
     return output;
-  }, [perSlide, validProducts]);
+  }, [validProducts]);
 
   useEffect(() => {
     if (slides.length === 0) {
@@ -148,7 +118,7 @@ const FeaturedCarousel = ({ products = [] }) => {
 
   return (
     <SectionWrapper
-      className={`${styles.carousel} av-carousel`}
+      className={`${styles.carousel} ${styles['av-carousel']}`}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
       onTouchStart={handleTouchStart}
@@ -162,11 +132,14 @@ const FeaturedCarousel = ({ products = [] }) => {
       <div className={styles.viewport}>
         <div
           className={styles.slider}
-          style={{ transform: `translateX(-${activeIndex * 100}%)` }}
+          style={{
+            transform: `translateX(-${activeIndex * 100}%)`,
+            transition: 'transform 0.45s ease',
+          }}
         >
           {slides.map((group, index) => (
             <div key={`slide-${index}`} className={styles.slide}>
-              <div className={`${styles.slideInner} av-slide`}>
+              <div className={styles.slideInner}>
                 {group.map((product) => (
                   <ProductCard key={product.id} product={product} className="av-card--carousel" />
                 ))}
