@@ -29,8 +29,8 @@
 
 .avRatingBadge {
   position: absolute;
-  top: 12px;
-  right: 12px;
+  top: 8px;
+  right: 8px;
   background: #ffffff;
   border-radius: 12px;
   padding: 4px 8px;
@@ -181,8 +181,8 @@
 
 .av-fav-btn {
   position: absolute;
-  top: 16px;
-  right: 16px;
+  top: calc(8px + 24px + 6px);
+  right: 8px;
   width: 40px;
   height: 40px;
   border-radius: 999px;
@@ -195,6 +195,8 @@
   transform: translateY(-10px);
   transition: opacity 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
   box-shadow: 0 10px 22px rgba(26, 26, 26, 0.08);
+  z-index: 40;
+  margin-top: 4px;
 }
 
 .av-fav-btn:focus-visible {

@@ -49,6 +49,27 @@ const AboutPage = () => {
             <p>Воскресенье: выходной</p>
           </div>
           <div className={styles['av-about-card']}>
+            <a
+              href="https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwiJ1c-AneqQAxWlZ_EDHYtMJmQQ4kB6BAg-EAM&url=%2Fmaps%2Fplace%2F%2Fdata%3D!4m2!3m1!1s0x14c39ae87f276445%3A0x4382b249e7f49e82%3Fsa%3DX%26ved%3D1t%3A8290%26ictx%3D111&usg=AOvVaw11HEThT72xIljzye8pqBOQ&opi=89978449"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Открыть адрес на карте"
+              className={styles['av-about-cardAction']}
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1.8"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                aria-hidden="true"
+              >
+                <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 1 1 16 0Z" />
+                <circle cx="12" cy="10" r="3" />
+              </svg>
+            </a>
             <h3>Наш адрес</h3>
             <p>Fener Mahallesi, Bülent Ecevit Blv 2B, Laura AVM, Antalya</p>
             <p>+90 531 270 5539</p>

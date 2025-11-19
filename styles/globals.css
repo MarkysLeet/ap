@@ -225,24 +225,26 @@ html {
 .av-carousel {
   position: relative;
   overflow: visible;
-}
-
-.av-slide {
-  display: grid;
-  gap: 16px;
-  align-items: start;
+  --carousel-gap: 16px;
 }
 
 @media (min-width: 640px) {
-  .av-slide {
-    gap: 20px;
+  .av-carousel {
+    --carousel-gap: 20px;
   }
 }
 
 @media (min-width: 768px) {
-  .av-slide {
-    gap: 24px;
+  .av-carousel {
+    --carousel-gap: 24px;
   }
+}
+
+.av-slide {
+  display: grid;
+  gap: var(--carousel-gap, 16px);
+  align-items: start;
+  box-sizing: border-box;
 }
 
 @media (min-width: 1024px) {
@@ -265,6 +267,7 @@ html {
 
 .av-card--carousel {
   height: auto;
+  margin: 0;
 }
 
 .av-card-media {
@@ -286,7 +289,7 @@ html {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  z-index: 60;
+  z-index: 20;
 }
 
 .av-cr-prev {
